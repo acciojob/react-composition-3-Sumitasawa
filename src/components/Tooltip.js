@@ -5,7 +5,7 @@ const Tooltip = ({ text, children }) => {
 
   const showTooltip = () => setVisible(true);
   const hideTooltip = () => setVisible(false);
-  
+
   return cloneElement(children, {
     className: `${children.props.className || ""} tooltip`,
     onMouseEnter: showTooltip,
@@ -13,7 +13,7 @@ const Tooltip = ({ text, children }) => {
     children: (
       <>
         {children.props.children}
-        {visible && <div className="tooltiptext">{text}</div>}
+        {visible && <div>{text}</div>}
       </>
     ),
   });
